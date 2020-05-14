@@ -8,12 +8,17 @@ var world;
 var boxes = [];
  
 var ground;
+var gslider;
 
 function setup() {
     createCanvas(400, 400);
     engine = Engine.create();
     world = engine.world;
     Engine.run(engine);
+
+    gslider = createSlider(0,100,50);
+    gslider.position(100,375);
+    gslider.input = map(engine.world.gravity, gslider.min, gslider.max, 0, 1);
  
  
     var options = {
