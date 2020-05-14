@@ -20,7 +20,8 @@ function setup() {
     gslider.position(100,375);
     gslider.input = map(engine.world.gravity, gslider.min, gslider.max, 0, 1);
  
- 
+    
+
     var options = {
         isStatic: true
     }
@@ -36,6 +37,8 @@ function mousePressed() {
  
 function draw() {
     background(255,255,0);
+
+    var noY = gslider.value();
  
     for (var i = 0; i < boxes.length; i++) {
         boxes[i].show();
@@ -45,6 +48,11 @@ function draw() {
     strokeWeight(4);
     rectMode(CENTER);
     rect(ground.position.x, ground.position.y, width, 10);
+
+    // World.gravity.y = noY;
+
+    text("Gravity " + noY, 150, 371);
+
    
 }
  
